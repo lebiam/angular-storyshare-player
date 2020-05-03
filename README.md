@@ -1,8 +1,11 @@
 # angular-storyshare-player
 
-[![NPM version](https://img.shields.io/npm/v/angular-highcharts.svg)](https://npmjs.org/package/angular-storyshare-player)
+Storyshare-player is an Angular component allowing to broadcast stories on the web 🚀
 
-Storyshare is an Angular component allowing to broadcast stories on the web 🚀
+Storyshare-player is a component extracted from the Storyshare project. It allows you to create and broadcast interactive stories in the web browser.
+Ability to segment and analyze your stories.
+Integration with other services (CRM ...) gives you incredible power.
+We develop a web platform to create unique and interactive stories. (in-progress)
 
 
 ## Installation

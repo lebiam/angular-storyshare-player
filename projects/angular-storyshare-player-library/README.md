@@ -1,24 +1,109 @@
-# AngularStorysharePlayerLibrary
+# angular-storyshare-player
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
+Storyshare-player is an Angular component allowing to broadcast stories on the web 🚀
 
-## Code scaffolding
+Storyshare-player is a component extracted from the Storyshare project. It allows you to create and broadcast interactive stories in the web browser.
+Ability to segment and analyze your stories.
+Integration with other services (CRM ...) gives you incredible power.
+We develop a web platform to create unique and interactive stories. (in-progress)
 
-Run `ng generate component component-name --project angular-storyshare-player-library` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project angular-storyshare-player-library`.
-> Note: Don't forget to add `--project angular-storyshare-player-library` or else it will be added to the default project in your `angular.json` file. 
 
-## Build
+## Installation
 
-Run `ng build angular-storyshare-player-library` to build the project. The build artifacts will be stored in the `dist/` directory.
+### npm
 
-## Publishing
+```bash
+npm i --save angular-storyshare-player
+```
 
-After building your library with `ng build angular-storyshare-player-library`, go to the dist folder `cd dist/angular-storyshare-player-library` and run `npm publish`.
+## Usage Example
 
-## Running unit tests
+```typescript
+// app.module.ts
+import { PlayerVideoModule } from 'angular-storyshare-player';
 
-Run `ng test angular-storyshare-player-library` to execute the unit tests via [Karma](https://karma-runner.github.io).
+@NgModule({
+  imports: [
+    PlayerVideoModule // add PlayerVideoModule to your imports
+  ]
+})
+export class AppModule {}
+```
 
-## Further help
+```typescript
+// Type.enum.ts
+export enum Type {
+    Image,
+    Video
+}
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```typescript
+// player.component.ts
+import { Story } from 'angular-storyshare-player';
+import { User } from 'angular-storyshare-player';
+
+@Component({
+  template: `
+    <app-player-stories [user]="user" [stories] ="stories"></app-player-stories>
+  `
+})
+export class PlayerComponent {
+  user: User = {
+    name: 'Antoine Biamouret',
+    img: 'https://firebasestorage.googleapis.com/v0/b/stories-b3038.appspot.com/o/me.svg?alt=media&token=523d7e9d-40bc-4866-8637-95d5a74017a8'
+  }
+
+  stories : Story[] = 
+        [
+            {
+              source : "https://picsum.photos/id/124/1080/1920",
+              type : Type.Image,
+              duration : 6000,
+              progression: 0
+            },
+            {
+              source : "https://picsum.photos/id/125/1080/1920",
+              type : Type.Image,
+              duration : 6000,
+              progression: 0
+            },
+            {
+              source : "https://picsum.photos/id/126/1080/1920",
+              type : Type.Image,
+              duration : 6000,
+              progression: 0
+            },
+            {
+              source : "https://picsum.photos/id/127/1080/1920",
+              type : Type.Image,
+              duration : 3000,
+              progression: 0
+            },
+            {
+              source : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+              type : Type.Video,
+              duration : 6000,
+              progression: 0
+            },
+            {
+              source : "https://picsum.photos/id/128/1080/1920",
+              type : Type.Image,
+              duration : 3000,
+              progression: 0
+            },
+            {
+              source : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+              type : Type.Video,
+              duration : 6000,
+              progression: 0
+            },
+            {
+              source : "https://picsum.photos/id/129/1080/1920",
+              type : Type.Image,
+              duration : 3000,
+              progression: 0
+            }
+          ]
+}
+```

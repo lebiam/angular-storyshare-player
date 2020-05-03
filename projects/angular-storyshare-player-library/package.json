@@ -5,10 +5,10 @@
     "author": "Antoine Biamouret",
     "repository": {
         "type": "git",
-        "url": ""
+        "url": "https://github.com/lebiam/angular-storyshare-player.git"
     },
     "bugs": {
-        "url": ""
+        "url": "https://github.com/lebiam/angular-storyshare-player/issues"
     },
     "keywords": [
         "angular",
