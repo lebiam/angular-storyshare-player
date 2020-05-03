@@ -1,56 +1,21 @@
-# angular-storyshare-player
-
-[![NPM version](https://img.shields.io/npm/v/angular-highcharts.svg)](https://npmjs.org/package/angular-storyshare-player)
-
-Storyshare is an Angular component allowing to broadcast stories on the web 🚀
-
-
-## Installation
-
-### npm
-
-```bash
-npm i --save angular-storyshare-player
-```
-
-## Usage Example
-
-```typescript
-// app.module.ts
-import { PlayerVideoModule } from 'angular-storyshare-player';
-
-@NgModule({
-  imports: [
-    PlayerVideoModule // add PlayerVideoModule to your imports
-  ]
-})
-export class AppModule {}
-```
-
-```typescript
-// Type.enum.ts
-export enum Type {
-    Image,
-    Video
-}
-```
-
-```typescript
-// player.component.ts
-import { Story } from 'angular-storyshare-player';
-import { User } from 'angular-storyshare-player';
+import { Component } from '@angular/core';
+import { User } from 'dist/angular-storyshare-player-library/lib/models/User';
+import { Story } from 'dist/angular-storyshare-player-library/lib/models/Story';
+import { Type } from './models/Type.enum';
 
 @Component({
-  template: `
-    <app-player-stories [user]="user" [stories] ="stories"></app-player-stories>
-  `
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
-export class PlayerComponent {
+export class AppComponent {
+  title = 'sample';
+
   user: User = {
     name: 'Antoine Biamouret',
     img: 'https://firebasestorage.googleapis.com/v0/b/stories-b3038.appspot.com/o/me.svg?alt=media&token=523d7e9d-40bc-4866-8637-95d5a74017a8'
   }
-
+ 
   stories : Story[] = 
         [
             {
@@ -103,4 +68,3 @@ export class PlayerComponent {
             }
           ]
 }
-```
